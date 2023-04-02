@@ -53,12 +53,13 @@ input[type="number"]::-webkit-inner-spin-button {
     top: 15px;
     right: 15px;
 
-    color: white;
+    /* color: white; */
     font-size: 25px;
-    text-shadow: 1px 1px 1px #000;
+    /* text-shadow: 1px 1px 1px #000; */
 }
 
 .header-text {
+    height: 36px;
     font-size: 36px;
     /* font-style: italic; */
 }
@@ -71,15 +72,6 @@ input[type="number"]::-webkit-inner-spin-button {
 .width-layout {
     left: 5%;
     width: 90%;
-}
-.title-text-layout {
-    margin-top: 25px;
-    margin-bottom: 10px;
-    font-size: x-large;
-}
-.button-layout {
-    margin-top: 10px;
-    /* margin-bottom: 25px; */
 }
 
 .custom-button {
@@ -99,6 +91,16 @@ input[type="number"]::-webkit-inner-spin-button {
 .white-space {
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+#computer_border {
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+}
+#main_screen {
+    width: 100%;
+    height: 100%;
 }
 
 
