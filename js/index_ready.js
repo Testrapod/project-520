@@ -48,6 +48,7 @@ $(document).ready(function () {
         }
         
         current_idx += 1;
+        $("#main_screen").attr("src", ""); // 로딩 최적화
         showScreen(screen_list[current_idx]);
 
         $("#main_screen").hide();

@@ -9,7 +9,7 @@ body { font-family: 'Do Hyeon', sans-serif; }
 body {
     height: 100vh;
     /* overflow: hidden; 스크롤 막기 */
-    /* background-image: url("../img/totoro1_blur.jpg"); */
+    background-image: url("../img/mac_background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -38,7 +38,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .form-check-input:focus { box-shadow: none; }
 
 .modal-content {
-    /* background-image: url("../img/kaze1_blur.jpeg"); */
+    /* background-image: url("../img/.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -53,9 +53,9 @@ input[type="number"]::-webkit-inner-spin-button {
     top: 15px;
     right: 15px;
 
-    /* color: white; */
+    color: white;
     font-size: 25px;
-    /* text-shadow: 1px 1px 1px #000; */
+    text-shadow: 1px 1px 1px #000;
 }
 
 .header-text {
@@ -92,6 +92,28 @@ input[type="number"]::-webkit-inner-spin-button {
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
+.border-top-line { border-top: 1px solid black; }
+
+.window-skin {
+    background-color: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.circle {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    display: inline-block;
+
+    margin-top: 7px;
+    margin-right: 4px;
+}
+.fill-red { background-color: #fe5f57; }
+.fill-yellow { background-color: #fdbc2e; }
+.fill-green { background-color: #27c840; }
 
 #computer_border {
     width: 100%;
