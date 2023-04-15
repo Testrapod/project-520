@@ -7,7 +7,7 @@ body { font-family: 'Do Hyeon', sans-serif; }
 
 /* 배경 */
 body {
-    height: 100vh;
+    /* height: 100vh; */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -46,6 +46,34 @@ input[type="number"]::-webkit-inner-spin-button {
     color: #ffeb90;
     text-shadow: 1px 1px 1px #e5aebe;
 }
+.very-large-text { font-size: xx-large; }
 .large-text { font-size: large; }
 .accent-text { color: orangered; }
 .gray-text { color: darkgray; }
+
+
+/* hint */
+@keyframes fadeIn {
+    /* animation */
+    0% { opacity: 0; transform: translate3d(0, 0, 100%); }
+    to { opacity: 1; transform: translateZ(0); }
+}
+#hint_button {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+
+    color: gold;
+    font-size: 20px;
+    text-shadow: 1px 1px 1px rgb(0 0 0 / 0.2);
+}
+#hint_text {
+    position: fixed;
+    top: 15px;
+    right: 45px;
+
+    text-align: right;
+
+    display: none;
+    animation: fadeIn 0.4s;
+}
