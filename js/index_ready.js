@@ -24,6 +24,12 @@ const answer_list = [
     "은행",
     "아이스크림",
     "용용선생",
+    "이메일",
+    "축제",
+    "하양토끼 하루",
+    "뉴진스의 하입보이요",
+    "고슴도치",
+    "막내",
 ]
 
 $(document).ready(function () {
@@ -57,9 +63,20 @@ $(document).ready(function () {
     // Enter
     function handleEnter() {
         var user_answer = $("#answer_input").val().replace(/ /g, "");
-        var real_answer = answer_list[current_idx].replace(/ /g, "")
         $("#answer_input").val("");
 
+        // Debug ///////////////////////////////////////////////////////////////////////
+        const dbg_cmd = /^dbg=/;
+        var dbg_result = user_answer.split(dbg_cmd);
+        if (dbg_result.length > 1) {
+            current_idx = Number(dbg_result[1]);
+
+            showScreen(screen_list[current_idx]);
+            return;
+        }
+        ////////////////////////////////////////////////////////////////////////////////
+
+        var real_answer = answer_list[current_idx].replace(/ /g, "");
         if (user_answer != real_answer) {
             $("#answer_input").addClass("is-invalid");
             setTimeout(function () { $("#answer_input").removeClass("is-invalid"); }, 1000);
@@ -88,7 +105,6 @@ $(document).ready(function () {
 
     function showScreen(page) {
         src = "./screen/" + page + ".html";
-        $("#main_screen").attr("src", ""); // 로딩 최적화
         $("#main_screen").attr("src", src);
     }
 
