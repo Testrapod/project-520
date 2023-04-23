@@ -31,21 +31,21 @@ $(document).ready(function () {
 
     ////////////////////////////////////////////////////////////////////////////////
     // BGM
-    var bgm; var bgmOn = false; var bgmFirstTime = true;
+    var bgm; var bgm_on = false; var bgm_first_time = true;
     $("#bgm_button").click(function () {
-        if (!bgmOn) {
-            if (bgmFirstTime) {
-                // bgm = new Audio("bgm/ghibli.mp3");
-                bgmFirstTime = false;
+        if (!bgm_on) {
+            if (bgm_first_time) {
+                bgm = new Audio("bgm/tsuki_sea.mp3");
+                bgm_first_time = false;
             }
-            // bgm.play();
-            bgmOn = true;
+            bgm.play();
+            bgm_on = true;
 
             $("#bgm_button").removeClass("bi-volume-up");
             $("#bgm_button").addClass("bi-volume-mute");
         } else {
-            // bgm.pause();
-            bgmOn = false;
+            bgm.pause();
+            bgm_on = false;
 
             $("#bgm_button").removeClass("bi-volume-mute");
             $("#bgm_button").addClass("bi-volume-up");
@@ -56,13 +56,13 @@ $(document).ready(function () {
     ////////////////////////////////////////////////////////////////////////////////
     // Enter
     function handleEnter() {
-        var answer = $("#answer_input").val();
+        var user_answer = $("#answer_input").val().replace(/ /g, "");
+        var real_answer = answer_list[current_idx].replace(/ /g, "")
         $("#answer_input").val("");
-        
-        if (answer != answer_list[current_idx]) {
-            $("#alert_message").text("잘못 입력하셨습니다.");
-            $("#alert_fail").show();
-            setTimeout(function () { $("#alert_fail").fadeOut(); }, 1000);
+
+        if (user_answer != real_answer) {
+            $("#answer_input").addClass("is-invalid");
+            setTimeout(function () { $("#answer_input").removeClass("is-invalid"); }, 1000);
             return;
         }
         
@@ -78,7 +78,7 @@ $(document).ready(function () {
     $("#enter_button").click(handleEnter);
     ////////////////////////////////////////////////////////////////////////////////
 
-    var typedTitle = new Typed("#title", {
+    var typed_title = new Typed("#title", {
         strings: ["PROJECT: 520"],
         typeSpeed: 120,
         backSpeed: 120,
