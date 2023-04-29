@@ -51,6 +51,30 @@ input[type="number"]::-webkit-inner-spin-button {
 .accent-text { color: orangered; }
 .gray-text { color: darkgray; }
 
+.gryffindor {
+    height: 40px;
+    background-color: #b8161c;
+}
+.hufflepuff {
+    height: 40px;
+    background-color: #f6e80f;
+}
+.ravenclaw {
+    height: 40px;
+    background-color: #181847;
+}
+.slytherin {
+    height: 40px;
+    background-color: #03461c;
+}
+
+
+/* a 태그 */
+a:link { color : black; }
+a:hover { color : gray; }
+a:active { color : gray; }
+a:visited { color : black; }
+
 
 /* hint */
 #hint_button {
