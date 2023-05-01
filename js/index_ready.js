@@ -17,6 +17,7 @@ const screen_list = [
     "question14",
     "question15",
     "question16",
+    "final"
 ]
 const answer_list = [
     "520522",
@@ -33,9 +34,10 @@ const answer_list = [
     "우동가조쿠",
     "만찐두빵",
     "스테이오안",
-    "사",
+    "4",
     "호랑이",
-    "해리포터"
+    "해리포터",
+    "하은아 생일 축하하고 내가 만이 4랑해"
 ]
 
 $(document).ready(function () {
@@ -86,6 +88,14 @@ $(document).ready(function () {
         if (user_answer != real_answer) {
             $("#answer_input").addClass("is-invalid");
             setTimeout(function () { $("#answer_input").removeClass("is-invalid"); }, 1000);
+            return;
+        }
+
+        // final
+        if (current_idx == 17) {
+            $("#project_520").fadeOut("fast").promise().done(function () {
+                $("#birthday_event").fadeIn();
+            });
             return;
         }
         

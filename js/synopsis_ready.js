@@ -16,7 +16,7 @@ $(document).ready(function () {
         2. <span class="gray-text">파일에 걸린 암호</span>는 동해도 까먹을까봐 문제 형태로 풀 수 있게 되어있다. 😅<br/>
         3. 파일은 총 <span class="large-text">16</span>개! 즉 <span class="large-text">16</span>개의 문제를 모두 풀어야만 맨 마지막에 동해의 이벤트를 알아낼 수 있다.<br/>
         4. <span class="gray-text">암호</span>를 알아내면 하단 입력창에 입력하자. 그러면 자동으로 다음 파일로 넘어간다.<br/>
-        5. <span class="gray-text">암호</span>는 전부 <span class="accent-text">한글</span>로만 이루어져있다!! (영어, 숫자도 모두 한글로 작성!)<br/>
+        5. <span class="gray-text">암호</span>는 전부 <span class="accent-text">한글</span> 또는 <span class="accent-text">숫자</span>로만 이루어져있다!! (영어는 없음!)<br/>
         6. 각 <span class="gray-text">암호</span>마다 우측 상단 💡 버튼을 누르면 힌트가 나오니 참고하도록.<br/><br/>
         우선 연습삼아 컴퓨터 암호부터 풀어보자.<br/>
         컴퓨터 암호도 핸드폰 암호랑 같았던거 같은데.. 🤔
