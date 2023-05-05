@@ -85,7 +85,7 @@ $(document).ready(function () {
         ////////////////////////////////////////////////////////////////////////////////
 
         var real_answer = answer_list[current_idx].replace(/ /g, "");
-        if (user_answer != real_answer) {
+        if ((user_answer != real_answer) && !checkAnotherAnswer(current_idx, user_answer)) {
             $("#answer_input").addClass("is-invalid");
             setTimeout(function () { $("#answer_input").removeClass("is-invalid"); }, 1000);
             return;
@@ -102,8 +102,8 @@ $(document).ready(function () {
         current_idx += 1;
         showScreen(screen_list[current_idx]);
 
-        $("#main_screen").hide();
-        $("#main_screen").fadeIn(2000);
+        // $("#main_screen").hide();
+        // $("#main_screen").fadeIn(2000);
     }
     $("#answer_input").on("keypress", function (key) {
         if (key.keyCode == 13) handleEnter();
