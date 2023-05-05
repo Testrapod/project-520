@@ -43,13 +43,12 @@ const answer_list = [
 $(document).ready(function () {
     var current_idx = 0
 
-    ////////////////////////////////////////////////////////////////////////////////
-    // BGM
+    // BGM /////////////////////////////////////////////////////////////////////////
     var bgm; var bgm_on = false; var bgm_first_time = true;
     $("#bgm_button").click(function () {
         if (!bgm_on) {
             if (bgm_first_time) {
-                bgm = new Audio("bgm/tsuki_sea.mp3");
+                bgm = new Audio("music/tsuki_sea.mp3");
                 bgm_first_time = false;
             }
             bgm.play();
@@ -67,8 +66,7 @@ $(document).ready(function () {
     });
     ////////////////////////////////////////////////////////////////////////////////
 
-    ////////////////////////////////////////////////////////////////////////////////
-    // Enter
+    // Enter ///////////////////////////////////////////////////////////////////////
     function handleEnter() {
         var user_answer = $("#answer_input").val().replace(/ /g, "");
         $("#answer_input").val("");
@@ -109,6 +107,33 @@ $(document).ready(function () {
         if (key.keyCode == 13) handleEnter();
     });
     $("#enter_button").click(handleEnter);
+    ////////////////////////////////////////////////////////////////////////////////
+
+    // Music ///////////////////////////////////////////////////////////////////////
+    var check_bgm = false;
+    var music_audio = new Audio("music/200_and.mp3");
+    $("#music_button").click(function () {
+        var musicModal = new bootstrap.Modal(document.getElementById("musicModal"));
+        musicModal.show();
+
+        if (bgm_on) {
+            bgm.pause();
+            bgm_on = false;
+            check_bgm = true;
+        }
+
+        music_audio.play();
+    });
+    $("#musicModal").on('hidden.bs.modal', function () {
+        music_audio.pause();
+        music_audio.currentTime = 0;
+
+        if (check_bgm) {
+            bgm.play();
+            bgm_on = true;
+            check_bgm = false;
+        }
+    });
     ////////////////////////////////////////////////////////////////////////////////
 
     var typed_title = new Typed("#title", {
